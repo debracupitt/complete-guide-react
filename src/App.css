@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+button:focus {
+  outline: none;
+}
+
+.red {
+  color: red;
+}
+
+.darkred {
+  color: darkred;
+}
+
+.bold {
+  font-weight: bold;
+}
