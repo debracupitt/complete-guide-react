@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.css";
 import Person from "./Person/Person";
 
 class App extends Component {
@@ -13,7 +13,6 @@ class App extends Component {
   };
 
   deletePersonHandler = personIndex => {
-    // const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
@@ -42,17 +41,8 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "#73eaba",
-      font: "inherit",
-      border: "1px solid black",
-      padding: "8px",
-      boxShadow: "0 2px 3px #ccc",
-      cursor: "pointer",
-      borderRadius: "10px"
-    };
-
     let persons = null;
+    let btnClass = "";
 
     if (this.state.showPersons) {
       persons = (
@@ -70,37 +60,34 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = "#ffc5da";
-      style[":hover"] = {
-        backgroundColor: "#ff6099",
-        fontWeight: "bold"
-      };
+
+      btnClass = classes.pink;
     }
 
-    const classes = [];
+    const assignedClasses = [];
 
     let description = "There's lots of people here.";
 
     if (this.state.persons.length <= 2) {
-      classes.push("red");
+      assignedClasses.push(classes.red);
       description = "There's not many people left...";
     }
 
     if (this.state.persons.length <= 1) {
-      classes.push("bold");
+      assignedClasses.push(classes.bold);
       description = "There's only one person left!";
     }
 
     if (this.state.persons.length <= 0) {
-      classes.push("darkred");
+      assignedClasses.push(classes.darkred);
       description = "THERE'S NO ONE LEFT!";
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm Deb's React App</h1>
-        <p className={classes.join(" ")}>{description}</p>
-        <button style={style} onClick={this.togglePersonHandler}>
+        <p className={assignedClasses.join(" ")}>{description}</p>
+        <button className={btnClass} onClick={this.togglePersonHandler}>
           Show/Hide Names
         </button>
         {persons}
