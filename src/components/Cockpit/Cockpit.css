@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.Cockpit {
+  margin: auto;
 }
 
 button:focus {
@@ -18,7 +18,7 @@ button:focus {
   font-weight: bold;
 }
 
-.App button {
+.Cockpit button {
   background-color: #73eaba;
   font: inherit;
   border: 1px solid black;
@@ -28,17 +28,17 @@ button:focus {
   border-radius: 10px;
 }
 
-.App button:hover {
+.Cockpit button:hover {
   background-color: #6ed6ac;
   font-weight: bold;
   border-width: 2px;
 }
 
-.App button.pink {
+.Cockpit button.pink {
   background-color: lightpink;
 }
 
-.App button.pink:hover {
+.Cockpit button.pink:hover {
   background-color: #ff6099;
   font-weight: bold;
   border-width: 2px;
