@@ -20,17 +20,17 @@ const cockpit = props => {
     btnClass = classes.pink;
   }
 
-  if (props.persons.length <= 2) {
+  if (props.personsLength <= 2) {
     assignedClasses.push(classes.red);
     description = "There's not many people left...";
   }
 
-  if (props.persons.length <= 1) {
+  if (props.personsLength <= 1) {
     assignedClasses.push(classes.bold);
     description = "There's only one person left!";
   }
 
-  if (props.persons.length <= 0) {
+  if (props.personsLength <= 0) {
     assignedClasses.push(classes.darkred);
     description = "THERE'S NO ONE LEFT!";
   }
@@ -46,4 +46,4 @@ const cockpit = props => {
   );
 };
 
-export default cockpit;
+export default React.memo(cockpit);
