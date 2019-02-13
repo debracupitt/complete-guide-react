@@ -26,6 +26,8 @@ button:focus {
   box-shadow: 0 2px 3px #ccc;
   cursor: pointer;
   border-radius: 10px;
+  margin: 20px auto;
+  display: block;
 }
 
 .Cockpit button:hover {
