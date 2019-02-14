@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+
 import Person from "./Person/Person";
 
 class Persons extends PureComponent {
@@ -34,10 +35,10 @@ class Persons extends PureComponent {
     return this.props.persons.map((person, index) => {
       return (
         <Person
-          key={person.id}
+          click={() => this.props.clicked(index)}
           name={person.name}
           age={person.age}
-          click={() => this.props.clicked(index)}
+          key={person.id}
           changed={event => this.props.changed(event, person.id)}
         />
       );
@@ -59,5 +60,7 @@ class Persons extends PureComponent {
 //     );
 //   });
 // };
+
+//           isAuth={this.props.isAuthenticated}
 
 export default Persons;
